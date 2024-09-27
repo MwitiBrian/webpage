@@ -6,30 +6,36 @@
 			<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
 		</head>
 <style> 
-h1{color:darkgreen;}
-body{background-color:lightblue;}
+body{background-color:green;}
+.container {
+  position: center;
+  margin: 20px;
+  max-width: 300px;
+  padding: 20px;
+  background-color: lightblue;}
+h1{color:green;}
 form{background-color:orange;}
 input{color:black;}
 label{color:red;}
+button{background-color:green;}
 </style>
+
 	<body>
-		<h1>Login here!</h1>
-		<i class="fas fa-lock"></i>
-	<form>
+		<form action="/action_page.php" class="container">
+			<h1>Login here!<h1>
 			
 		<label for="email">Email:</label><br>
 			<input type="email" id="email" name="email" placeholder="...@gamil.com" required><br>
 			<label for="password">Password:</label><br>
 			<input type="password" id="password" name="password" placeholder="*********" required><br>
 			<br>
-			<input type="submit" value="Log in">
-			<input type="submit" value="Rest password">
+			<button class="button button">Log in</button><br>
+			<button class="button button">Rest password</button>
 			</form>
+	
 	</body>
 	</center>
 </html>
-
-
 
 
 
