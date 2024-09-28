@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+  <meta name="description" content="contact form">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="Brian">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+<style>
+.image-container {
+            position: relative;
+            display: inline-block;
+        }
+.image-container img {
+            width: 100%; 
+	    height: auto}
+.form-overlay {
+            position: absolute;
+            top: 20%; 
+            left: 50%;
+            transform: translateX(-40%);
+            background-color:brown;
+            padding: 15px;
+            border-radius: 20px;
+        }
+body { background-color:grey;
+	font-family: sans-serif;
+        display:flex;
+        justify-content:center;
+	align-items:center;
+
+}
+ form {
+	 background-color:lightblue;
+	 border-radius: 20px;
+ }
+ h1 {
+	 background-color:lightblue;
+		color:red;
+		border-radius: 20px;
+
+	}
+label {
+	background-color:lightblue;
+	color;darkgreen;
+	border-radius: 20px;
+}
+button {
+	background-color:orange;
+	color:green;
+	border-radius: 20px;
+}
+button:hover {
+	background-color:red;
+	color:black;
+	border-radius: 20px;
+}
+input {
+	background-color:indigo;
+	color:white;
+}
+textarea {
+	background-color:gold;
+	color:red;
+	border-radius:20px;
+}
+</style>
+<center>
+	<body>
+		<div class="image-container">
+        <img src="" alt="">
+        <div class="form-overlay">
+	<form> 
+		<h1>contact form</h1><br>
+		<label for="first-name">First Nmae</label><br>
+		<input type="text"id="name" placeholder="first name" required><br>
+		<label for="last-name">Last Name</label><br>
+		<input type="text"id="name" placeholder="last name" required></input><br>
+		<label for="email">Email</label><br>
+		<input type="email"id="email" placeholder="contact@gmail.com"</input><br>
+		<label for="message">Message</label><br>
+	<textarea id="message" name="message" rows="4" cols="50" placeholder="leave your feedback here!"></textarea><br><br>
+	<button type="button" onclick="alert('sent!')">Submit</button>
+	</form>
+	</div>
+		</div>
+</center>
+</body>
+</html>
+
