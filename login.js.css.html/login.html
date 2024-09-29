@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<center>
+		<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up Forms</title>
+    <style>
+        body {
+            background-color: lightgreen;
+        }
+        .container {
+            position: relative;
+            margin: 20px;
+            max-width: 300px;
+            padding: 10px;
+            background-color: lightblue;
+            border-radius: 10px;
+        }
+        h1 {
+            color: green;
+        }
+        form {
+            background-color: lightgrey;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        input {
+            color: black;
+            width: 70%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        label {
+            color: red;
+        }
+        button {
+            background-color: green;
+            width: 70%;
+            border-radius: 7px;
+        }
+        button:hover {
+            background-color: blue;
+            color: white;
+        }
+        .form-overlay {
+            display: none; /* Hide by default */
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: lightgrey;
+            padding: 15px;
+            border-radius: 20px;
+            max-width: 300px;
+        }
+        .form-overlay.active {
+            display: block; /* Show when active */
+        }
+        .back-button {
+            background-color: transparent;
+            border: none;
+            color: blue;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="container" id="loginFormContainer">
+        <form id="loginForm">
+            <h1>Login here!</h1>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="...@gmail.com" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="*********" required><br>
+            <button type="button" onclick="alert('Logging in...')">Log in</button><br>
+            <h4>Create account</h4>
+            <a href="#" class="sign-up" onclick="showForm('signupForm')">Sign up?</a><br>
+            <a href="#" class="forgot-password" onclick="showForm('restpasswordform')">Forgot Password?</a>
+        </form>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="form-overlay" id="signupForm">
+        <form>
+            <button type="button" class="back-button" onclick="showForm('loginFormContainer')">← Back</button>
+            <h1>REGISTRATION FORM</h1>
+            <p>First Name</p>
+            <input type="text" id="firstName" placeholder="First name" required>
+            <p>Last Name</p>
+            <input type="text" id="lastName" placeholder="Last name" required>
+            <p>Email</p>
+            <input type="email" id="registerEmail" placeholder="registration@gmail.com" required>
+            <p>New Password</p>
+            <input type="password" id="newPassword" placeholder="***********" required>
+            <p>Confirm Password</p>
+            <input type="password" id="confirmPassword" placeholder="***********" required><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Reset Password Form -->
+    <div class="form-overlay" id="restpasswordform">
+        <form style="background-color: white; border-radius: 10px; padding: 10px;">
+            <button type="button" class="back-button" onclick="showForm('loginFormContainer')">← Back</button>
+            <h1>Reset Password</h1><br>
+            <label for="resetEmail">Email:</label><br>
+            <input type="email" id="resetEmail" name="email" placeholder="Enter email@example" required><br>
+            <button type="button" onclick="alert('Email sent..')">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            // Hide all forms
+            document.querySelectorAll('.form-overlay').forEach(form => {
+                form.classList.remove('active');
+            });
+            // Show the selected form
+            if (formId === 'loginFormContainer') {
+                document.getElementById(formId).style.display = 'block'; // Show login form
+            } else {
+                document.getElementById(formId).classList.add('active'); // Show the specific form
+                document.getElementById('loginFormContainer').style.display = 'none'; // Hide login form
+            }
+        }
+    </script>
+
+</body></center>
+</html>
+
