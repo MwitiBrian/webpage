@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<center>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxBNimLhpyP4Hr08l_fnBHXVVQbkxpcbzTsw&s');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        form {
+            background-color: lightgrey;
+            width: 40%;
+            border-radius: 20px;
+        }
+        h1 {
+            color: green;
+        }
+        label {
+            color: red;
+            font-size: 20px;
+        }
+        input {
+            width: 70%;
+            border-radius: 7px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+        }
+        .loginbutton button {
+            background-color: green;
+            width: 60%;
+            border-radius: 7px;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .loginbutton button:hover {
+            background-color: blue;
+        }
+        .social-login button {
+            border-radius: 7px;
+            border: none;
+            background-color: transparent;
+        }
+        .social-login img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+      
+        .button-container button {
+            background-color: lightgreen;
+            padding: 7px;
+            border-radius: 7px;
+            width: 60%; /* Adjust width to fit two buttons */
+            border: none;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: green;
+            color: white;
+        }
+        .button-container button.back-button {
+            background-color: lightgrey;
+            width:40%;
+        }
+        .button-container button.back-button:hover {
+            background-color: red;
+            color: black;
+        }
+        .signupForm form {
+            background-color: white;
+            width: 60%;
+            color: blue;
+        }
+        .signupForm form input {
+            background-color: lightgrey;
+            border: none;
+        }
+        .signupForm form h1 {
+            background-color: black;
+            color: red;
+        }
+        .form-overlay {
+            display: none; /* Hide by default */
+        }
+       .resetForm form{
+       background-color:lightblue;
+       height:40vh;
+       }
+        .resetForm label {
+        color:black;
+        }
+        .resetForm h1 {
+        color:red;
+        }
+	.resetForm button {
+        background-color:orange;
+        }
+        .resetForm button.back-button{
+        background-color:blue;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="loginForm" id="loginFormContainer">
+        <form id="loginForm">
+            <h1>Login Here!</h1>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="...@gmail.com" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="*********" required><br>
+            <div class="loginbutton">
+                <button type="button" onclick="alert('Logging in...')">Log in</button>
+            </div>
+            <a href="#" class="forgot-password" onclick="showForm('restpasswordform')">Forgot Password?</a><br>
+            <h4>Create account</h4>
+            <a href="#" class="sign-up" onclick="showForm('signupFormContainer')">Sign up?</a><br>
+            <div class="social-login">
+                <p>Continue with:</p>
+                <button type="button" class="google">
+                    <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Google">
+                </button>
+                <button type="button" class="facebook">
+                    <img src="https://img.icons8.com/color/24/000000/facebook-new.png" alt="Facebook">
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="signupForm" id="signupFormContainer" style="display:none;">
+        <form id="signupform">
+            <h1>Sign up</h1>
+            <p>First Name</p>
+            <input type="text" id="firstName" placeholder="First name" required>
+            <p>Last Name</p>
+            <input type="text" id="lastName" placeholder="Last name" required>
+            <p>Email</p>
+            <input type="email" id="registerEmail" placeholder="registration@gmail.com" required>
+            <p>New Password</p>
+            <input type="password" id="newPassword" placeholder="***********" required>
+            <p>Confirm Password</p>
+            <input type="password" id="confirmPassword" placeholder="***********" required><br>
+            <div class="button-container">
+                <button type="submit">Register</button><br><br>
+                <button type="button" class="back-button" onclick="showForm('loginFormContainer')">Back</button><br><br>
+            </div>
+        </form>
+    </div>
+
+    <!-- Reset Password Form -->
+    <div class="resetForm" id="restpasswordform" style="display:none;">
+        <form>
+            <h1>Reset Password</h1>
+            <label for="resetEmail">Email:</label><br>
+            <input type="email" id="resetEmail" name="email" placeholder="Enter email@example" required><br>
+            <div class="button-container">
+            <button type="button" onclick="alert('Email sent..')">Send</button><br><br>
+                 <button type="button" class="back-button" onclick="showForm('loginFormContainer')">Back</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            // Hide all forms
+            document.getElementById('loginFormContainer').style.display = 'none';
+            document.getElementById('signupFormContainer').style.display = 'none';
+            document.getElementById('restpasswordform').style.display = 'none';
+            // Show the selected form
+            document.getElementById(formId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</center>
+</html>
+
+
