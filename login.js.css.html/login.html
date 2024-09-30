@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html>i
 <html lang="en">
 	<center>
 		<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Sign Up Forms</title>
     <style>
-        body {
-            background-color: lightgreen;
-        }
-        .container {
+        body {background-image: url('https://escales.ponant.com/wp-content/uploads/2020/12/plage.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+	}
+	.container{
             position: relative;
             margin: 20px;
             max-width: 300px;
@@ -36,12 +39,13 @@
         }
         button {
             background-color: green;
-            width: 70%;
+            width: 30%;
             border-radius: 7px;
         }
         button:hover {
             background-color: blue;
             color: white;
+	    width:30%;
         }
         .form-overlay {
             display: none; /* Hide by default */
@@ -57,17 +61,23 @@
         .form-overlay.active {
             display: block; /* Show when active */
         }
+	.button-container {
+            display: flex;
+            justify-content: space-between; /* Space between buttons */
+            margin-top: 20px; /* Add some space above the buttons */
+	}
         .back-button {
-            background-color: transparent;
+            background-color: red;
             border: none;
             color: blue;
             cursor: pointer;
-            font-size: 16px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            text-decoration: underline;
+            font-size: 10px;
+            position:relative;
+	    width:30%;
         }
+	.social-login button.google, .facebook {
+		background-color:white;
+	}
     </style>
 </head>
 <body>
@@ -84,13 +94,23 @@
             <h4>Create account</h4>
             <a href="#" class="sign-up" onclick="showForm('signupForm')">Sign up?</a><br>
             <a href="#" class="forgot-password" onclick="showForm('restpasswordform')">Forgot Password?</a>
-        </form>
+	      <div class="social-login">
+            <p>Or login with:</p>
+            <button type="button" class="google">
+                <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Google">
+            </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="facebook">
+                <img src="https://img.icons8.com/color/24/000000/facebook-new.png" alt="Facebook">
+            </button>
+        </div>
+    </div>
+	</form>
     </div>
 
     <!-- Sign Up Form -->
     <div class="form-overlay" id="signupForm">
-        <form>
-            <button type="button" class="back-button" onclick="showForm('loginFormContainer')">← Back</button>
+	    <body style="background-image:https://www.gohawaii.com/sites/default/files/styles/image_gallery_bg_xl/public/hero-unit-images/11500_mauibeaches.jpg?itok=I2TvGlCa">
+	   <form>
             <h1>REGISTRATION FORM</h1>
             <p>First Name</p>
             <input type="text" id="firstName" placeholder="First name" required>
@@ -102,22 +122,28 @@
             <input type="password" id="newPassword" placeholder="***********" required>
             <p>Confirm Password</p>
             <input type="password" id="confirmPassword" placeholder="***********" required><br>
+	    <div class="button-container">
+	     <button type="button" class="back-button" onclick="showForm('loginFormContainer')">Back</button>
             <button type="submit">Submit</button>
+	    </div>
         </form>
+	    </body>
     </div>
 
     <!-- Reset Password Form -->
     <div class="form-overlay" id="restpasswordform">
         <form style="background-color: white; border-radius: 10px; padding: 10px;">
-            <button type="button" class="back-button" onclick="showForm('loginFormContainer')">← Back</button>
-            <h1>Reset Password</h1><br>
+		<h1 style=background-color:white;color:black;>Reset Password </h1>
             <label for="resetEmail">Email:</label><br>
             <input type="email" id="resetEmail" name="email" placeholder="Enter email@example" required><br>
+	    <div class="button-container">
+	    <button type="button" class="back-button" onclick="showForm('loginFormContainer')">Back</button>
             <button type="button" onclick="alert('Email sent..')">Send</button>
+	    </div>
         </form>
     </div>
 
-    <script>
+	    <script>
         function showForm(formId) {
             // Hide all forms
             document.querySelectorAll('.form-overlay').forEach(form => {
