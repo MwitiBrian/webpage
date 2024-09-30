@@ -15,7 +15,7 @@
         }
         form {
             background-color: lightgrey;
-            width: 40%;
+            width: 30%;
             border-radius: 20px;
         }
         h1 {
@@ -107,6 +107,34 @@
         .resetForm button.back-button{
         background-color:blue;
         }
+	.otpForm form {
+            background-color: darksalmon;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .otpForm h1 {
+            color: black;
+            text-align: center;
+        }
+        .otpForm label {
+            color: indigo;
+        }
+        .otpForm input {
+            border: none;
+            width: 100%;
+        }
+        .otpForm button {
+            padding: 10px;
+            width: 30%;
+            background-color: blue;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .otpForm button:hover {
+            background-color: green;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -143,7 +171,7 @@
             <h1>Sign up</h1>
             <p>First Name</p>
             <input type="text" id="firstName" placeholder="First name" required>
-            <p>Last Name</p>
+             <p>Last Name</p>
             <input type="text" id="lastName" placeholder="Last name" required>
             <p>Email</p>
             <input type="email" id="registerEmail" placeholder="registration@gmail.com" required>
@@ -152,7 +180,7 @@
             <p>Confirm Password</p>
             <input type="password" id="confirmPassword" placeholder="***********" required><br>
             <div class="button-container">
-                <button type="submit">Register</button><br><br>
+                <button type="button" onclick="register()">Register</button><br><br>
                 <button type="button" class="back-button" onclick="showForm('loginFormContainer')">Back</button><br><br>
             </div>
         </form>
@@ -170,15 +198,43 @@
             </div>
         </form>
     </div>
+    <!-- OTP Verification -->
+    <div class="otpForm" id="otpFormCointainer" style="display:none;">
+	    <form id="verifyForm">
+            <h1>OTP Verification</h1>
+	    <label for="code">Enter code</label>
+            <input type="text" id="number" placeholder="sent code" required>
+            <button type="button">Verify</button>
+        </form>
+    </div>
 
     <script>
         function showForm(formId) {
-            // Hide all forms
+  
             document.getElementById('loginFormContainer').style.display = 'none';
             document.getElementById('signupFormContainer').style.display = 'none';
             document.getElementById('restpasswordform').style.display = 'none';
-            // Show the selected form
+	    document.getElementById('otpFormCointainer').style.display = 'none';
+
             document.getElementById(formId).style.display = 'block';
+        }
+	function register() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('registerEmail').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (!firstName || !lastName || !email || !newPassword || !confirmPassword) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            if (newPassword !== confirmPassword) {
+                alert('Passwords do not match.');
+                return;
+            }
+            showForm('otpFormCointainer');
         }
     </script>
 
@@ -186,4 +242,4 @@
 </center>
 </html>
 
-
+	
