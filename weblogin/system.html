@@ -12,6 +12,8 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+	    background-size:100%;
+	    height:100vh;
         }
         form {
             background-color: lightgrey;
@@ -135,6 +137,24 @@
             background-color: green;
             color: white;
         }
+	.otpForm button.close {
+		background-color:transparent;
+		font-size:20px;
+		position:absolute;
+		height:10px;
+		border:30px;
+		top:0px;
+	}
+	.otpForm button.close:hover{
+		color:red;
+	}
+	.otpForm button.resend{
+		background-color:grey;
+	}
+	.otpForm button.resend:hover{
+		background-color:red;
+		color:white;
+	}
     </style>
 </head>
 <body>
@@ -201,10 +221,12 @@
     <!-- OTP Verification -->
     <div class="otpForm" id="otpFormCointainer" style="display:none;">
 	    <form id="verifyForm">
+		    <button type="button" class="close" onclick="showForm('signupFormContainer')">✕</button>
             <h1>OTP Verification</h1>
 	    <label for="code">Enter code</label>
-            <input type="text" id="number" placeholder="sent code" required>
-            <button type="button">Verify</button>
+	    <input type="text" id="number" placeholder="sent code" required><br>
+	    <button type="button" class="resend"onclick="alert('code sent')">Resend</button>
+             <button type="button">Verify</button>
         </form>
     </div>
 
