@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .chat-container {
+            background-color: white;
+            border-radius: 8px;
+            width: 500px;
+        }
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .messages {
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .message.sent {
+            background-color: green;
+            color: white; 
+            align-self: flex-end;
+        }
+        .message.received {
+            background-color: lightblue;
+            align-self: flex-start;
+        }
+        input[type="text"] {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="messages" id="messages"></div> <!-- Fixed ID -->
+        </div>
+        <input type="text" id="message-input" placeholder="Type a message" required>
+        <button id="send-button">Send</button>
+    </div>
+    <script>
+        document.getElementById('send-button').addEventListener('click', function() {
+            const input = document.getElementById('message-input');
+            const messageText = input.value.trim();
+
+            if (messageText) {
+                
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'sent');
+                messageElement.textContent = messageText;
+
+              
+                const messagesContainer = document.getElementById('messages'); // Fixed ID
+                messagesContainer.appendChild(messageElement);
+
+              
+                input.value = '';
+
+            
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        });
+
+        document.getElementById('message-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('send-button').click();
+            }
+        });
+    </script>
+</body>
+</html>
+
