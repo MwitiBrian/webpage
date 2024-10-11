@@ -1,68 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Responsive Webpage</title>
     <style>
-        .navbar {
+        body {
+            background-color:lightgrey;
+        }
+        .hero {
+            background-color:blue;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        section {
+            padding: 60px 20px;
             background-color:lightgreen;
-            padding: 1rem;
-            color:blue;
+            margin: 20px 0;
+            border-radius: 8px;
+           
         }
-        .nav-menu {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-        .nav-menu li {
-            margin-right: 20px;
-	    padding:10px 15px;
-        }
-        .nav-menu a {
-            color:black;
-            text-decoration: none;
-        }
-	.nav-menu a:hover{
-		color:red;
-	}
-	 @keyframes moveright {
-            100% {
-                transform: translateX(-100%); 
-            }
-           0% {
-                transform: translateX(100vw); 
-            }
-        }
-
-
-        .moving-word {
-            position:flex;
-            font-size: 2rem; 
-            animation: moveright 7s linear infinite;
-	    top:0%;
-	    left:100%;
-	    color:blue;
-
-	}
     </style>
 </head>
-<div class="moving-word">Hello welcome to my page.Enjoy your experience</div>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-                <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
-                <li><a href="#"><i class="fas fa-comments"></i> Feedback</a></li>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#home">My Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
             </ul>
+            <form class="form-inline ml-3">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to My Website</h1>
+        <p>The best soving site</p>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to your best webpage.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <p>roject Name: SmartTask Manager
+
+Overview: SmartTask Manager is an innovative task management application designed to enhance productivity and organization for users ranging from students to professionals. Our goal is to provide a user-friendly platform that simplifies task tracking, prioritization, and collaboration.
+
+Key Features:
+
+Intuitive Interface: Our application boasts a clean and intuitive interface that allows users to easily navigate and manage their tasks.
+Task Prioritization: Users can categorize tasks by priority levels, ensuring that the most important tasks are addressed first.
+</p>    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email:brayodelva@gmail.com
+	Tel:+254759142486</p>
+        <form>
+            <div class="form-group">
+                <label for="contactName">Name</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <label for="contactEmail">Email</label>
+                <input type="email" class="form-control" id="contactEmail" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea class="form-control" id="contactMessage" rows="3" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
