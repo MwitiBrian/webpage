@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Brian Mwiti - Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+            color: #333;
+        }
+	 @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        header {
+            background: #004d40;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	    animation: float 3s ease-in-out infinite;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffccbc;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+        h2 {
+            color: #00796b;
+            border-bottom: 2px solid #00796b;
+            padding-bottom: 5px;
+        }
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Circular image */
+            margin-bottom: 10px;
+        }
+        .skills-image {
+            width: 50%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+	    position:relative;
+	    display:block;
+	     animation: rotate 12s infinite; 
+	}
+        .skills-image:nth-child(2) { animation-delay: 3s; }
+        .skills-image:nth-child(3) { animation-delay: 6s; }
+        .skills-image:nth-child(4) { animation-delay: 9s; }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .chat-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chat-box {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+        }
+        .messages {
+            display: flex;
+            flex-direction: column;
+        }
+        .message {
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .message.sent {
+            background-color: #388e3c;
+            color: white; 
+            align-self: flex-end;
+        }
+        .message.received {
+            background-color: #81d4fa;
+            align-self: flex-start;
+        }
+        input[type="text"] {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <header>
+	    <img src="https://scontent-mba1-1.xx.fbcdn.net/v/t39.30808-1/448857022_443440715155630_91767861930079922_n.jpg?stp=c0.0.698.698a_dst-jpg_s200x200&_nc_cat=105&ccb=1-7&_nc_sid=0ecb9b&_nc_eui2=AeGN7aFecV9hZ7R3ViX6QqU0ZwrddTqL-D1nCt11Oov4PSu-FHZOvmXLAZ7sl9rkFU4XqGV9TtaAZWwrgs88Hpuc&_nc_ohc=enspyaGTLhcQ7kNvgGoW_HL&_nc_zt=24&_nc_ht=scontent-mba1-1.xx&_nc_gid=AK9rv6rUXeEh4TBfHlwA6HJ&oh=00_AYAyHz0dRkx7iVhi0H4lQuAhBvHc9Ex87eQ03KoQ1zK92Q&oe=671D11D2" alt="professor" class="profile-image">
+	    <h1>Professor Brian Mwiti</h1>
+        <p>Computer Science Educator & Innovator</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFoaepfYOiTng/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1721310797984?e=1734566400&v=beta&t=8nsSiLMN9sH9RYAk47gPg-rEAKedRmMYMkCj2DzRu1I" alt="Mwiti Brian" class="profile-image"> 
+        <p>Hello! I’m Mwiti Brian, a dedicated computer science educator passionate about technology and innovation. I strive to inspire students and contribute to the field through teaching, research, and collaboration on impactful projects.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>My Projects</h3>
+            <ul>
+                <li>Task Manager</li>
+                <li>Data Visualization Dashboard</li>
+                <li>media Application</li>
+                <li>Machine Learning Model</li>
+                <li>Personal Portfolio Website</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>Web Development</p>
+	 <img src="https://api.reliasoftware.com/uploads/web_development_is_important_176fa0618e.jpg" alt="My Skills" class="skills-image">
+        <p>Cyber Security</p>
+	 <img src="https://www.theforage.com/blog/wp-content/uploads/2022/12/what-is-cybersecurity.jpg" alt="My Skills" class="skills-image">
+        <p>Computer Networks</p>
+	 <img src="https://cdn.prod.website-files.com/61b21a152ca3e478ff782964/627e650f22a9a52cd54085be_Computer%20networking.jpg" alt="My Skills" class="skills-image">
+        <p>Application Design</p>
+	 <img src="https://kiwiuae.com/wp-content/uploads/2023/10/mobile-application-design-og-img.jpeg" alt="My Skills" class="skills-image">
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:brayodelva@gmail.com">brayodelva@gmail.com</a></p>
+        <p>Tel: +254759142486</p>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="messages" id="messages"></div>
+            </div>
+            <input type="text" id="message-input" placeholder="Type a message" required>
+            <button id="send-button">Send</button>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('send-button').addEventListener('click', function() {
+            const input = document.getElementById('message-input');
+            const messageText = input.value.trim();
+
+            if (messageText) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', 'sent');
+                messageElement.textContent = messageText;
+
+                const messagesContainer = document.getElementById('messages');
+                messagesContainer.appendChild(messageElement);
+                input.value = '';
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        });
+
+        document.getElementById('message-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                document.getElementById('send-button').click();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
